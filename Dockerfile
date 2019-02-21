@@ -1,5 +1,5 @@
 FROM ubuntu:14.04
-MAINTAINER qwh005007@gmail.com
+MAINTAINER xmakercn@gmail.com
 
 RUN apt-get update && \
     apt-get install -y build-essential autoconf autopoint automake git pkg-config libtool wget upx-ucl
