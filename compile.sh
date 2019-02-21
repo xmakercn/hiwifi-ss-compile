@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-# -----------创建编译目录
+# -----------创建编译�?�?
 rm -rf /mnt/build/shadowsocks-$MLIB
 mkdir -p /mnt/build/shadowsocks-$MLIB && cd /mnt/build/shadowsocks-$MLIB
 BASE=$(pwd)
@@ -15,7 +15,7 @@ export STAGING_DIR=/mnt/hc5962/staging_dir
 
 # ------------编译mbedTLS
 mkdir -p $SRC/mbedTLS && cd $SRC/mbedTLS
-ver=2.6.0
+ver=2.16.0
 wget -q --no-check-certificate https://tls.mbed.org/download/mbedtls-$ver-gpl.tgz
 tar zxf mbedtls-$ver-gpl.tgz
 cd mbedtls-$ver
@@ -23,7 +23,7 @@ CC=$HOST-gcc AR=$HOST-ar LD=$HOST-ld LDFLAGS=-static make DESTDIR=$PREFIX instal
 
 # ------------编译pcre
 mkdir -p $SRC/pcre && cd $SRC/pcre
-ver=8.41
+ver=8.42
 wget -q ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-$ver.tar.gz
 tar zxf pcre-$ver.tar.gz
 cd pcre-$ver
@@ -32,7 +32,7 @@ make -j`nproc` && make install
 
 # ------------编译libsodium
 mkdir -p $SRC/libsodium && cd $SRC/libsodium
-ver=1.0.16
+ver=1.0.17
 wget -q --no-check-certificate https://download.libsodium.org/libsodium/releases/libsodium-$ver.tar.gz
 tar zxf libsodium-$ver.tar.gz
 cd libsodium-$ver
@@ -41,9 +41,9 @@ make -j`nproc` && make install
 
 # ------------编译libev
 mkdir -p $SRC/libev && cd $SRC/libev
-ver=4.24
+ver=4.25
 # wget -q http://dist.schmorp.de/libev/libev-$ver.tar.gz
-wget -q https://sources.voidlinux.eu/libev-$ver/libev-$ver.tar.gz
+wget -q http://dist.schmorp.de/libev/libev-$ver.tar.gz
 tar zxf libev-$ver.tar.gz
 cd libev-$ver
 ./configure --host=$HOST --prefix=$PREFIX --disable-shared
@@ -59,7 +59,7 @@ make -j`nproc` && make install
 
 # ------------编译c-ares
 mkdir -p $SRC/c-ares && cd $SRC/c-ares
-ver=1.13.0
+ver=1.15.0
 wget -q https://c-ares.haxx.se/download/c-ares-$ver.tar.gz
 tar zxvf c-ares-$ver.tar.gz
 cd c-ares-$ver
@@ -70,7 +70,7 @@ make -j`nproc` && make install
 
 # ------------编译shadowsocks-libev
 mkdir -p $SRC/shadowsocks-libev && cd $SRC/shadowsocks-libev
-ver=3.2.0
+ver=3.2.3
 git clone git://github.com/shadowsocks/shadowsocks-libev
 cd shadowsocks-libev
 git checkout v$ver -b v$ver
@@ -105,7 +105,7 @@ find $BASE/ss-* ! -name 'ss-nat' -type f | xargs $HOST-strip
 find $BASE/ss-* ! -name 'ss-nat' -type f | xargs upx
 cd $BASE
 
-# ------------还原环境变量
+# ------------还原�?境变�?
 # PATH=$PATH_A
 echo
 echo "Done!"
