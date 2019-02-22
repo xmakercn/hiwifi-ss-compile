@@ -17,7 +17,8 @@ deploy:
   provider: releases
   api_key:
     secure: gVBpwTLpc8rEIrVVlLSMQ0GffPsJyJoeMo6Q+44yMqujC4T9XPqsehfq8AdtWZ1BDEOsQVstv168qG4DbuKradBT6IaUk3ojbDmolWehFM8jCp/IUtJFzL0wMIyv4/wJZYp/UIl0ocQfvz+OmrU64/0yjjuYEfvGyyz5RevDamuLt+E2zqLmdmAoy3GqUIJkMsch5yq0i5JTxzKd3foFNYcIDWB+wf/5gYk+YGfEJOKthxxbgyniOGpB5gC6WX0q63vMEzk0epvtZIF3xNr4GXLw+lI3GtHXAL07OZS4yKDB4l/TENhOP3Ln+VOCAoLGvQMnf3CqADXCgUOFegDNOt3POJtU0Bof03Kg1cBhBmNUEaHcrJTVfCCkt35Bb0d8a/H78298VFQetKciwOZWWYD61AHl5niImCBR7HE/o5IKt1C1d2Bfkd8OcgJso9ITMbHgwVZ1VKM4OfViwo7FYAKDPNrhZevISaheNS8Ur87+XixJm0/vdawJlnBxbyAQ4TyLu0sX2ILe7MDByRC990LmbEsNlHCZ8kHFBwCm2juZV2Swr4H19qoo8/PEhCRxNaqOqqn0eTRhsBehtkf3YNw5Q8/j0QIR3/v/A2EISKqY5XtQAJ+JsTwE4wQRknDVyLWWBFDC5+rIKxofM/Thkkmi90UfvvGC3MFjvdWE1uc=
-  file: 
+  file_glob: true
+    file: 
     - "build/ss-*"
     - "build/obfs-*"
   skip_cleanup: true
