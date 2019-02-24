@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-# -----------创建编译�?�?
+# -----------创建编译�?�?
 rm -rf /mnt/build/shadowsocks-$MLIB
 mkdir -p /mnt/build/shadowsocks-$MLIB && cd /mnt/build/shadowsocks-$MLIB
 BASE=$(pwd)
@@ -105,7 +105,7 @@ find $BASE/ss-* ! -name 'ss-nat' -type f | xargs $HOST-strip
 find $BASE/ss-* ! -name 'ss-nat' -type f | xargs upx
 cd $BASE
 
-# ------------还原�?境变�?
+# ------------还原�?境变�?
 # PATH=$PATH_A
 echo
 echo "Done!"
